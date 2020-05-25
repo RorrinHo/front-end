@@ -1,0 +1,41 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Listado de Usuarios</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead align="center">
+          <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Name</th>
+            <th>LastName</th>
+            <th>Accion</th>
+          </tr>
+        </thead>
+        <tbody align="center">
+          <tr *ngFor="let usuario of usuarios | async">
+            <td>{{usuario.id}}</td>
+            <td>{{usuario.username}}</td>
+            <td>{{usuario.password}}</td>
+            <td>{{usuario.name}}</td>
+            <td>{{usuario.lastName}}</td>
+            <td align="center">
+              <div class="row">
+                <div class="col order-3">
+                  <button (click)="detalleUsuario(usuario.id)" class="btn btn-info btn-sm"><i class="far fa-eye"></i></button>
+                </div>
+                <div class="col order-2">
+                  <button (click)="actualizarUsuario(usuario.id)" class="btn btn-warning btn-sm"><i class="far fa-edit"></i></button>
+                </div>
+                <div class="col order-1">
+                  <button (click)="borrarUsuario(usuario.id)" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button>
+                </div>
+              </div>     
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

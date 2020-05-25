@@ -1,0 +1,25 @@
+<div class="col-md-6 offset-sm-3">
+  <h3>Detalle Usuario</h3> 
+  <hr/>
+  <div *ngIf="usuario">
+    <div>
+      <label><b>Username: </b></label> {{usuario.username}}
+    </div>
+    <div>
+      <label><b>Password: </b></label> {{usuario.password}}
+    </div>
+    <div>
+      <label><b>Name: </b></label> {{usuario.name}}
+    </div>
+    
+    <div>
+      <label><b>LastName: </b></label> {{usuario.lastName}}
+    </div>  
+
+  </div>
+
+  <br>
+  <br>
+  <button (click)="lista()" class="btn btn-success col-md-6 offset-sm-3">Volver</button><br>
+
+</div>
